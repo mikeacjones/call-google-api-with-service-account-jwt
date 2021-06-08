@@ -24,10 +24,10 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 			<ee:variables >
 				<ee:set-variable variableName="token" ><![CDATA[%dw 2.0
 output application/java
-import jwt::RSA
+import dw::jwt::RSA
 ---
 {
-	token: RSA::PKCS8JWT(
+	token: RSA::JWT(
 		{
 			iss: p('google.clientEmail'),
 			aud: 'https://oauth2.googleapis.com/token',
